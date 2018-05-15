@@ -1,0 +1,52 @@
+@import 'vars';
+@import 'base';
+@import 'grid';
+@import 'mixin';
+
+.header{
+	@include pxToRem(padding-top, 45);
+	@include pxToRem(padding-bottom, 20);
+	margin-top: 1px;
+	border-top: $gray 1px solid;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		height: 4px;
+		top: 0;
+		left: 1px;
+		right: 1px;
+		background: $dark-gray;
+	}
+}
+.logo{
+	@include pxToRem(margin-bottom, 30);
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: 1.2;
+	&__name{
+		@include pxToRem(font-size, 38);
+		span{
+			display: block;
+			@include pxToRem(font-size, 48);
+
+		}
+	}
+}
+[href^="tel:"]{
+	white-space: nowrap;
+	text-decoration: none;
+	@include pxToRem(font-size, 14);
+	span{
+		@include pxToRem(font-size, 36);
+	}
+}
+.ul.links-list{
+	list-style: none;
+	@include pxToRem(font-size, 14); 
+	li{
+		@include pxToRem(margin-bottom, 15);
+		@include pxToRem(margin-top, 25);
+	}
+}
